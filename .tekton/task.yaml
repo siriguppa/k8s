@@ -14,6 +14,10 @@ spec:
     - name: api
       description: the ibmcloud api endpoint
       default: "https://cloud.ibm.com"
+     - name: cluster
+       description: cluster name
+     - name: task-pvc
+       description: the task pvc 
   workspaces:
   - name: task-pvc
     mountPath: /artifacts   
