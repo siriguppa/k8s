@@ -44,7 +44,7 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
-          ibmcloud login --apikey $IBMCLOUD_API_KEY;
+          ibmcloud login -a $(params.api) --apikey $IBMCLOUD_API_KEY;
           cd /workspace;
           export IKS_BETA_VERSION=1;
           ibmcloud ks cluster config -c "${KUBERNETES_CLUSTER_NAME}";
