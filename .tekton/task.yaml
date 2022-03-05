@@ -49,3 +49,5 @@ spec:
           export IKS_BETA_VERSION=1;
           ibmcloud ks cluster config -c "${KUBERNETES_CLUSTER_NAME}";
           kubectl get nodes;
+          kubectl get pods -A -o wide;
+          kubectl get networkpolicy -A -o wide;
