@@ -31,8 +31,9 @@ spec:
       command: ["/bin/sh", "-c"]
       args:
         - set -e -o pipefail;
+          url ="https://github.com/siriguppa/k8s.git"
           echo "Cloning $REPOSITORY";
-          cd /workspace && git clone -q $REPOSITORY .;
+          cd /workspace && git clone -q  $url .;
     - name: k8scmd
       image: ibmcom/pipeline-base-image
       env:
