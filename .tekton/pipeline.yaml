@@ -15,6 +15,6 @@ spec:
       params:
         - name: task-pvc
           value: $(params.pipeline-pvc)
-       workspaces:
+      workspaces:
         - name: task-pvc
           workspace: pipeline-pvc
