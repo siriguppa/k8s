@@ -6,6 +6,8 @@ spec:
   params:
     - name: pipeline-pvc
       description: the pipeline pvc name
+  workspaces:
+    - name: pipeline-pvc
   tasks:
     - name: k8s-task
       taskRef:
@@ -13,3 +15,6 @@ spec:
       params:
         - name: task-pvc
           value: $(params.pipeline-pvc)
+       workspaces:
+        - name: task-pvc
+          workspace: pipeline-pvc
