@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: pipeline
+spec:
+  params:
+    - name: pipeline-pvc
+      description: the pipeline pvc name
+  tasks:
+    - name: k8s-task
+      taskRef:
+        name: k8s-task
+      params:
+        - name: task-pvc
+          value: $(params.pipeline-pvc)
