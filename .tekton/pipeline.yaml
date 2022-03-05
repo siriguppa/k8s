@@ -4,8 +4,12 @@ metadata:
   name: pipeline
 spec:
   params:
-    - name: pipeline-pvc
-      description: the pipeline pvc name
+     - name: repository
+       description: repository
+     - name: cluster
+       description: cluster name
+     - name: apikey
+       description: apikey
   workspaces:
     - name: pipeline-pvc
   tasks:
