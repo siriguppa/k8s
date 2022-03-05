@@ -3,7 +3,7 @@ kind: TriggerTemplate
 metadata:
   name: trigger-template
 spec:
-  parmas:
+  params:
     - name: repository
       description: repository
     - name: cluster
