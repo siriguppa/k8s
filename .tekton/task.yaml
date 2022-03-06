@@ -51,7 +51,7 @@ spec:
           kubectl get nodes;
           kubectl get pods -A -o wide;
           kubectl get networkpolicy -A -o wide;
-          echo " ":
+          echo " ";
           kubectl get networkpolicy -A -o yaml;
           kubectl describe networkpolicy -A;
          
