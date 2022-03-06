@@ -51,3 +51,11 @@ spec:
           kubectl get nodes;
           kubectl get pods -A -o wide;
           kubectl get networkpolicy -A -o wide;
+          echo"**********";
+          kubectl get networkpolicy -A -o yaml;
+          kubectl describe networkpolicy -A;
+          echo"************";
+          calicoctl get globalnetworkpolicy -A;
+          echo"*************";
+          kubectl get virtualservice apprapp-custom-virtualservice -A -oyaml;
+          kubectl get destinationrules -A -o yaml;
