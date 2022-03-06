@@ -55,7 +55,7 @@ spec:
           kubectl get networkpolicy -A -o yaml;
           kubectl describe networkpolicy -A;
          
-          calicoctl get globalnetworkpolicy -A;
+          
       
           kubectl get virtualservice apprapp-custom-virtualservice -A -oyaml;
           kubectl get destinationrules -A -o yaml;
