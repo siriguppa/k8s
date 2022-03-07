@@ -70,8 +70,6 @@ spec:
           chmod  +x ./calicoctl;
 
 
-          calicoctl get globalnetworkpolicy;
-
 
         
           
