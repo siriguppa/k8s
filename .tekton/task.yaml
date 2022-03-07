@@ -63,7 +63,10 @@ spec:
           cd .;
           
           curl -L https://github.com/projectcalico/calico/releases/download/v3.22.1/calicoctl-linux-amd64 -o calicoctl;
-          chmod +x ./calicoctl;
+          cp  /usr/local/bin/calicoctl .;
+
+          chmod +x /usr/local/bin/calicoctl;
+
           calicoctl get globalnetworkpolicy;
 
 
