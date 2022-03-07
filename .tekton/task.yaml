@@ -61,17 +61,7 @@ spec:
           kubectl describe destinationrules -A;
           echo "";
           
-    - name: calico
-      image: alpine/git
-      env:
-       - name: IBMCLOUD_API_KEY
-         value: $(params.apikey)
-       - name: KUBERNETES_CLUSTER_NAME
-         value: $(params.cluster)
-        
-      command: ["/bin/sh", "-c"]
-      args:
-        - set -e -o pipefail;
+    
      
           
           curl -L https://github.com/projectcalico/calico/releases/download/v3.22.1/calicoctl-linux-amd64 -o calicoctl;
