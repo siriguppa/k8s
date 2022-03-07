@@ -51,8 +51,14 @@ spec:
           kubectl get nodes;
           kubectl get pods -A -o wide;
           kubectl get networkpolicy -A -o wide;
-          echo " ";
+          echo " network policy";
           kubectl get networkpolicy -A -o yaml;
           kubectl describe networkpolicy -A;
-         
+          echo "virtualservice";
+       
+          kubectl describe virtualservice -A;
+          echo "destinationrules ";
+          kubectl describe destinationrules -A;
+          echo "";
+        
           
