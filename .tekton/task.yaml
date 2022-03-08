@@ -64,7 +64,7 @@ spec:
           curl -L https://github.com/projectcalico/calico/releases/download/v3.22.1/calicoctl-linux-amd64 -o calicoctl;
           mv ./calicoctl /usr/local/bin/calicoctl;
           chmod +x /usr/local/bin/calicoctl;
-          echo "----- Ending Calico cli install"
+          echo " ";
          
           calicoctl get globalnetworkpolicy --allow-version-mismatch;
 
