@@ -44,11 +44,15 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
+          mkdir calico
+          echo "Installing yq to convert yaml to json format when downloading from git"
+          wget https://github.com/mikefarah/yq/releases/download/v4.4.1/yq_linux_amd64 -O /usr/bin/yq &&\
+          chmod +x /usr/bin/yq
           echo "----- Installing Calico -----"
           wget -q https://github.com/projectcalico/calicoctl/releases/download/v3.17.1/calicoctl;
           mv ./calicoctl /usr/local/bin/calicoctl;
           chmod +x /usr/local/bin/calicoctl;
-          echo "----- Ending Calico cli install";
+          echo "----- Ending Calico cli install"
           ibmcloud login -a $(params.api) -r us-east --apikey $IBMCLOUD_API_KEY;
           cd /workspace;
           export IKS_BETA_VERSION=1;
