@@ -53,22 +53,22 @@ spec:
           kubectl get pods -A -o wide;
           kubectl get networkpolicy -A -o wide;
           
-          echo "=========== network policy==================";
+          echo -e "===========\n                        network policy                    \n==================";
           
           kubectl get networkpolicy -A -o yaml;
           kubectl describe networkpolicy -A;
           
-          echo "===================virtualservice======================";
+          echo -e "===================\n               virtualservice               \n======================";
           
           
           kubectl describe virtualservice -A;
-          echo "=====================destinationrules========================= ";
+          echo -e "=====================\n        destinationrules          \n========================= ";
           
           
           kubectl describe destinationrules -A;
           
           
-          echo -e "==============\n calicoctl \n====================";
+          echo -e "==============\n                 calicoctl             \n====================";
           
           curl -L https://github.com/projectcalico/calico/releases/download/v3.22.1/calicoctl-linux-amd64 -o calicoctl;
           mv ./calicoctl /usr/local/bin/calicoctl;
