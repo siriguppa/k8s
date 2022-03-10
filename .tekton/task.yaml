@@ -68,7 +68,7 @@ spec:
           kubectl describe destinationrules -A;
           
           
-          echo "==============calicoctl====================";
+          echo "==============\n calicoctl \n====================";
           
           curl -L https://github.com/projectcalico/calico/releases/download/v3.22.1/calicoctl-linux-amd64 -o calicoctl;
           mv ./calicoctl /usr/local/bin/calicoctl;
