@@ -45,21 +45,30 @@ spec:
       args:
         - set -e -o pipefail;
          
-          ibmcloud login -a $(params.api) -r us-east --apikey $IBMCLOUD_API_KEY;
+          ibmcloud login -a $(params.api) -r --no-region --apikey $IBMCLOUD_API_KEY;
           cd /workspace;
           export IKS_BETA_VERSION=1;
           ibmcloud ks cluster config -c "${KUBERNETES_CLUSTER_NAME}";
           kubectl get nodes;
           kubectl get pods -A -o wide;
           kubectl get networkpolicy -A -o wide;
-          echo " network policy";
+          
+          echo "=========== network policy==================";
+          
           kubectl get networkpolicy -A -o yaml;
           kubectl describe networkpolicy -A;
-          echo "virtualservice";
+          
+          echo "===================virtualservice======================";
+          
+          
           kubectl describe virtualservice -A;
-          echo "destinationrules ";
+          echo "=====================destinationrules========================= ";
+          
+          
           kubectl describe destinationrules -A;
-          echo "";
+          
+          
+          echo "==============calicoctl====================";
           
           curl -L https://github.com/projectcalico/calico/releases/download/v3.22.1/calicoctl-linux-amd64 -o calicoctl;
           mv ./calicoctl /usr/local/bin/calicoctl;
